@@ -14,3 +14,10 @@ hs_err_pid*
 /Practica1-IW-Servidor/Practica1-IW-Servidor-war/nbproject/private/
 /Practica1-IW-Servidor/Practica1-IW-Servidor-ejb/nbproject/private/
 /Practica1-IW-Cliente/nbproject/private/
+/Practica1-IW-Servidor/Practica1-IW-Servidor-ejb/build/
+/Practica1-IW-Servidor/Practica1-IW-Servidor-war/build/
+/Practica1-IW-Servidor/build/
+/Practica1-IW-Servidor/Practica1-IW-Servidor-war/dist/
+/Practica1-IW-Servidor/Practica1-IW-Servidor-ejb/dist/
+/Practica1-IW-Servidor/dist/
+/Practica1-IW-Cliente/build/
