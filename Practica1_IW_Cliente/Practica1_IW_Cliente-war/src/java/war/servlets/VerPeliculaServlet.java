@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.ws.WebServiceRef;
+import war.services.Pelicula;
 import war.services.ServicioPelicula_Service;
 
 /**
@@ -38,11 +39,9 @@ public class VerPeliculaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //response.setContentType("text/html;charset=UTF-8");
-        String pathInfo = request.getPathInfo();
-        String idStr = pathInfo.substring(1);
-        int id = Integer.parseInt(idStr);
+        Integer id = Integer.valueOf(request.getParameter("id"));
         
-        war.services.Pelicula pelicula = service.getServicioPeliculaPort().find(id);
+        Pelicula pelicula = find(id);
         request.setAttribute("pelicula", pelicula);
         RequestDispatcher rd = this.getServletContext().getRequestDispatcher("/verPelicula.jsp");
         rd.forward(request, response);
@@ -86,5 +85,12 @@ public class VerPeliculaServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    private Pelicula find(java.lang.Object id) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        war.services.ServicioPelicula port = service.getServicioPeliculaPort();
+        return port.find(id);
+    }
 
 }

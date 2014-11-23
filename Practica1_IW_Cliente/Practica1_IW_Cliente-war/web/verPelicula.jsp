@@ -4,6 +4,7 @@
     Author     : Juanlu
 --%>
 
+<%@page import="war.services.Pelicula"%>
 <%@page import="war.services.ServicioPelicula_Service"%>
 <%@page import="javax.xml.ws.WebServiceRef"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,15 +14,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <%
-            war.services.Pelicula pelicula = (war.services.Pelicula)request.getAttribute("pelicula");
+            Pelicula pelicula = (Pelicula)request.getAttribute("pelicula");
             
         %>
 
-        <title><% pelicula.getNombre(); %></title>
+        <title><%= pelicula.getNombre() %></title>
             
     </head>
     <body>
-        <h1><%pelicula.getNombre();%> (<%pelicula.getAno();%>)</h1>
-        <p><% pelicula.getDescripcion(); %></p> 
+        <h2><%= pelicula.getNombre()%> (<%=pelicula.getAno()%>)</h2>
+        <p><%= pelicula.getDescripcion() %></p> 
     </body>
 </html>
