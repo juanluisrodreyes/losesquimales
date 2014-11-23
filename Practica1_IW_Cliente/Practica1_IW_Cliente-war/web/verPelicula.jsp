@@ -14,7 +14,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         
         <%
-            Pelicula pelicula = (Pelicula)request.getAttribute("pelicula");
+            Pelicula pelicula;
+            if (request.getSession().getAttribute("user") != null) {
+                pelicula = (Pelicula)request.getAttribute("pelicula");
+            } else {
+                pelicula = new Pelicula();
+                pelicula.setNombre("Forbidden access");
+                pelicula.setAno("403");
+                pelicula.setDescripcion("You don't have access to this resource");
+            }
+            
             
         %>
 
