@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Nyle
  */
-@WebServlet(name = "LoginUsuario", urlPatterns = {"/LoginUsuario"})
+@WebServlet(name = "LoginUsuarioServlet", urlPatterns = {"/LoginUsuarioServlet"})
 public class LoginUsuarioServlet extends HttpServlet {
     
     @EJB
