@@ -56,6 +56,8 @@ public class LoginUsuarioServlet extends HttpServlet {
             request.getSession().invalidate();             
             dispatcher = request.getRequestDispatcher("Login.jsp?msg=Logout correcto!");
         }
+        
+        response.sendRedirect("Login.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
