@@ -24,6 +24,7 @@
                 <th>Nombre</th>
                 <th>A&ntilde;o de estreno</th>
                 <th>Descripci&oacute;n</th>
+                <th> &nbsp;</th>
             </tr>
             <%
             if(lista!=null){
@@ -34,6 +35,7 @@
                 <td><%= p.getNombre() %></td>
                 <td><%= p.getAno() %></td>
                 <td><%= p.getDescripcion() %></td>
+                <td><a href="/verPelicula.jsp?ID=<%=p.getIdpelicula() %>">ver</a></td>
             </tr>
             <%
                 }
